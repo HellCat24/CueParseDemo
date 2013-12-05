@@ -58,7 +58,7 @@ public class DemoActivity extends Activity {
 		if(canWriteToFlash()){
 			initialize(savedInstanceState);
 		} else {
-			Toast.makeText(getApplicationContext(), "Sorry, SD card is busy at this moment", Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), "Sorry, SD card is busy at this moment", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
@@ -69,7 +69,7 @@ public class DemoActivity extends Activity {
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();
 	        if(action.equals(Intent.ACTION_MEDIA_SHARED)){
-	        	Toast.makeText(getApplicationContext(), "Sorry, SD card is busy at this moment", Toast.LENGTH_LONG).show();
+	        	Toast.makeText(getApplicationContext(), "Sorry, SD card is busy at this moment", Toast.LENGTH_SHORT).show();
 	        } else if(action.equals(Intent.ACTION_MEDIA_MOUNTED)){
 	        } else if (action.equals(Intent.ACTION_MEDIA_SCANNER_FINISHED)) {
 	        	tempStorageCount++;
@@ -114,7 +114,7 @@ public class DemoActivity extends Activity {
 						startActivity(audioActivity);
 					}
 				} catch (CueParseException e) {
-					Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 					e.printStackTrace();
 				}
 			}
